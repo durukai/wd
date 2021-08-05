@@ -1,43 +1,43 @@
 {
 	"1":{
 		"name":"phy_power",
-		"int":236
+		"int":2360
 	},
 	"2":{
 		"name":"mag_power",
-		"int":130
+		"int":1300
 	},
 	"3":{
 		"name":"max_life",
-		"int":355
+		"int":3550
 	},
 	"4":{
 		"name":"def",
-		"int":236
+		"int":2360
 	},
 	"5":{
 		"name":"speed",
-		"int":17
+		"int":170
 	},
 	"6":{
 		"name":"phy_power",
-		"int":236
+		"int":2360
 	},
 	"7":{
 		"name":"mag_power",
-		"int":130
+		"int":1300
 	},
 	"8":{
 		"name":"max_life",
-		"int":355
+		"int":3550
 	},
 	"9":{
 		"name":"def",
-		"int":236
+		"int":2360
 	},
 	"10":{
 		"name":"speed",
-		"int":17
+		"int":170
 	},
 	"消耗悟道":{
 		"消耗":1800
