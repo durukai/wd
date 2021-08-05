@@ -5537,5 +5537,32 @@
 		"FlyMaxAdGrow":10,
 		"FlyMinApGrow":248,
 		"FlyMaxApGrow":248
+	},	
+	"╬ен╡ои╨Э":{
+		"icon":30016,
+		"rank":12,
+		"phase":5,
+		"level":1,
+		"horse":1,
+		"minHpGrow":95,
+		"maxHpGrow":105,
+		"minMpGrow":65,
+		"maxMpGrow":75,
+		"minSpGrow":45,
+		"maxSpGrow":50,
+		"minAdGrow":0,
+		"maxAdGrow":10,
+		"minApGrow":70,
+		"maxApGrow":80,
+		"FlyMinHpGrow":135,
+		"FlyMaxHpGrow":147,
+		"FlyMinMpGrow":84,
+		"FlyMaxMpGrow":95,
+		"FlyMinSpGrow":83,
+		"FlyMaxSpGrow":90,
+		"FlyMinAdGrow":15,
+		"FlyMaxAdGrow":28,
+		"FlyMinApGrow":103,
+		"FlyMaxApGrow":116
 	}		
 }
