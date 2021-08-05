@@ -1,0 +1,35 @@
+diff a/data/宠物/宠物配置.json b/data/宠物/宠物配置.json	(rejected hunks)
+@@ -540,33 +540,6 @@
+ 		"FlyMinApGrow":167,
+ 		"FlyMaxApGrow":167
+ 	},
+-	"������":{
+-		"icon":22006,
+-		"rank":0,
+-		"phase":0,
+-		"level":1,
+-		"horse":0,
+-		"minHpGrow":144,
+-		"maxHpGrow":144,
+-		"minMpGrow":78,
+-		"maxMpGrow":78,
+-		"minSpGrow":104,
+-		"maxSpGrow":104,
+-		"minAdGrow":188,
+-		"maxAdGrow":188,
+-		"minApGrow":2,
+-		"maxApGrow":8,
+-		"FlyMinHpGrow":188,
+-		"FlyMaxHpGrow":188,
+-		"FlyMinMpGrow":25,
+-		"FlyMaxMpGrow":25,
+-		"FlyMinSpGrow":152,
+-		"FlyMaxSpGrow":152,
+-		"FlyMinAdGrow":258,
+-		"FlyMaxAdGrow":258,
+-		"FlyMinApGrow":26,
+-		"FlyMaxApGrow":26
+-	},
+     "ʯţ��":{
+ 		"icon":6147,
+ 		"rank":0,
