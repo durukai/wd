@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8"utf-8">
+<meta name="author" content="liucc" />
+<title>雷霆账号中心</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta content=" width = device-width , initial-scale = 1.0 , maximum-scale = 1.0 , user-scalable = no " id="viewport" name="viewport" />
+<script src="../../js/zepto.min.js" tppabs="http://103.216.154.254:6889/js/zepto.min.js"></script>
+<script src="../../js/scale_fn.js" tppabs="http://103.216.154.254:6889/js/scale_fn.js"></script>
+<link rel="stylesheet" href="../../css/base.css" tppabs="http://103.216.154.254:6889/css/base.css">
+<link rel="stylesheet" media="all and (orientation:landscape)" href="../../css/common.css" tppabs="http://103.216.154.254:6889/css/common.css">
+<link rel="stylesheet" media="all and (orientation:landscape)" href="../../css/paging.css" tppabs="http://103.216.154.254:6889/css/paging.css">
+<link rel="stylesheet" media="all and (orientation:portrait)" href="../../css/portrait/common.css" tppabs="http://103.216.154.254:6889/css/portrait/common.css">
+<link rel="stylesheet" media="all and (orientation:portrait)" href="../../css/portrait/paging.css" tppabs="http://103.216.154.254:6889/css/portrait/paging.css">
+</head>
+<body>
+	<div class="header pr">
+		<a href="javascript:back();" class="back icon"></a>
+		<div class="title clearfix">   
+			<a href="javascript:;" class="logo fl"></a>
+			<h3 class="fl">雷霆账号中心</h3>
+		</div>
+	</div>
+	<div class="account_center_change">
+		<p class="msg" id="account"></p>
+		<ul class="clearfix">
+			<li><a href="javascript:modifyPassword();">
+				<dl>
+					<dt class="dt1"><i class="icon"></i></dt>
+					<dd>修改密码<i class="icon"></i></dd>
+				</dl>
+			</a></li>
+			<li><a href="javascript:switchAccount();"  id="switchAccount">
+				<dl>
+					<dt class="dt2"><i class="icon"></i></dt>
+					<dd>切换账号<i class="icon"></i></dd>
+				</dl>
+			</a></li>
+			<!--
+			<li><a href="javascript:bindPhone();">
+				<dl>
+					<dt class="dt3"><i class="icon"></i></dt>
+					<dd>绑定手机<i class="icon"></i></dd>
+				</dl>
+			</a></li>
+			<li><a href="javascript:bindIdCard();">
+				<dl>
+					<dt class="dt4"><i class="icon"></i></dt>
+					<dd>实名认证<i class="icon"></i></dd>
+				</dl>
+			</a></li>
+			-->
+		</ul>
+	</div>
+	<!--popoup-->
+	<div class="common_popUp hidden">
+		<p></p>
+	</div>
+</body>
+<script src="../../js/sdk.js" tppabs="http://103.216.154.254:6889/js/sdk.js"></script>
+<script>
+	$(function () {
+        // 加载当前用户名
+        $("#account").html('您的账号：'+jsObject.getUsername());
+    });
+	//修改密码
+	function modifyPassword(){
+		location.href='find_password.html'/*tpa=http://103.216.154.254:6889/mobile/sdk/find_password.html*/;
+	}
+	//切换账号
+	function switchAccount(){
+		jsObject.switchAccount();
+	}
+	//绑定手机
+	function bindPhone(){
+		var bindStatus = jsObject.getBindPhoneStatus();
+		if(bindStatus === "1"){
+			popup_fn('该账号已绑定手机');
+		}else if(bindStatus === "10004"){
+			location.href='http://103.216.154.254:6889/mobile/sdk/bind_phone.html';
+		}else{
+			var msg = "网络异常，请稍后再试";
+			if(bindStatus !== '') {
+				msg += ('('+bindStatus+')');
+			}
+			popup_fn(msg);
+		}
+	}
+	//绑定身份证
+	function bindIdCard(){
+		var url=account_url+"/sdk/account/get_idcard_bind_status";
+		var time = String(new Date().getTime());
+		var username = jsObject.getUsername();
+		var data={"username":username,"timestamp":time,"sign":jsObject.getAccountSign(username, time)};
+		send_fn(url,data,function(result){
+			if(result.status === "1"){
+				jsObject.showMsg("此账号已绑定身份证");
+			}else if(result.status === "10005"){
+				var bindStatus = jsObject.getBindPhoneStatus();
+				if(bindStatus === "1"){
+					location.href='http://103.216.154.254:6889/mobile/sdk/bind_idcard.html';
+				}else if(bindStatus === "10004"){
+					jsObject.showMsg('当前账号未绑定手机，请先绑定');
+				}else{
+					var msg = "网络异常，请稍后再试";
+					if(bindStatus !== '') {
+						msg += ('('+bindStatus+')');
+					}
+					popup_fn(msg);
+				}
+			}else{
+				var msg = "网络异常，请稍后再试";
+				if(result.status !== '') {
+					msg += ('('+result.status+')');
+				}
+				popup_fn(msg);
+			}
+		});
+	}
+</script>
+</html>

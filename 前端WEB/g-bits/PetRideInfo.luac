@@ -1,0 +1,289 @@
+-- have_top_layer 因为遮挡关系，有的骑宠需要分成上下层，该字段用于配置是否存在上层，不存在上层时可不配
+-- stand_swingN / walk_swingN 的配置说明(N 表示方向)：
+--     x 表示 x 方向上的摆动幅度，y 表示 y 方向上的摆动幅度
+--     percent 表示摆动到最高点时需要的时间占整个动画播放时间的百分比值
+-- shelter_offsetN 的配置说明(N 表示方向)：
+--     x, y 用于配置判断遮挡关系时脚步基准点的偏移量（为地图坐标，而非像素坐标）
+--     骑宠需要设置 left 和 right 基准信息后才能生效
+-- use_swing_for_who 指定对谁使用摆动操作，all 人和骑宠都要使用，char 只对人使用，默认值为 all
+-- walk_icon 用于配置 walk 动作编号，默认为 00000
+-- show_char_shadow 用于配置乘骑时是否显示人物的影子
+return {
+    [31001] = -- 古鹿
+    {
+        show_char_shadow = false,
+        have_top_layer = true,
+        walk_icon = 10001,
+    },
+
+    [31003] = -- 幻鹿
+    {
+        show_char_shadow = false,
+        have_top_layer = true,
+        walk_icon = 10001,
+    },
+
+    [31006] = -- 仙阳剑
+    {
+        show_char_shadow = true,
+        have_top_layer = true,
+		stand_swing0 = { x = 0, y = 8, percent = 50 },
+        stand_swing1 = { x = 0, y = 8, percent = 50 },
+        stand_swing2 = { x = 0, y = 8, percent = 50 },
+        stand_swing3 = { x = 0, y = 8, percent = 50 },
+        stand_swing4 = { x = 0, y = 8, percent = 50 },
+        stand_swing5 = { x = 0, y = 8, percent = 50 },
+        stand_swing6 = { x = 0, y = 8, percent = 50 },
+        stand_swing7 = { x = 0, y = 8, percent = 50 },
+    },
+
+    [31007] = -- 翠灵剑
+    {
+        show_char_shadow = true,
+        have_top_layer = true,
+		stand_swing0 = { x = 0, y = 8, percent = 50 },
+        stand_swing1 = { x = 0, y = 8, percent = 50 },
+        stand_swing2 = { x = 0, y = 8, percent = 50 },
+        stand_swing3 = { x = 0, y = 8, percent = 50 },
+        stand_swing4 = { x = 0, y = 8, percent = 50 },
+        stand_swing5 = { x = 0, y = 8, percent = 50 },
+        stand_swing6 = { x = 0, y = 8, percent = 50 },
+        stand_swing7 = { x = 0, y = 8, percent = 50 },
+    },
+
+    [31010] = -- 岳麓剑
+    {
+        show_char_shadow = true,
+        have_top_layer = true,
+		stand_swing0 = { x = 0, y = 8, percent = 50 },
+        stand_swing1 = { x = 0, y = 8, percent = 50 },
+        stand_swing2 = { x = 0, y = 8, percent = 50 },
+        stand_swing3 = { x = 0, y = 8, percent = 50 },
+        stand_swing4 = { x = 0, y = 8, percent = 50 },
+        stand_swing5 = { x = 0, y = 8, percent = 50 },
+        stand_swing6 = { x = 0, y = 8, percent = 50 },
+        stand_swing7 = { x = 0, y = 8, percent = 50 },
+    },
+
+    [31011] = -- 仙葫芦
+    {
+        show_char_shadow = false,
+        have_top_layer = true,
+		stand_swing0 = { x = 0, y = 8, percent = 50 },
+        stand_swing1 = { x = 0, y = 8, percent = 50 },
+        stand_swing2 = { x = 0, y = 8, percent = 50 },
+        stand_swing3 = { x = 0, y = 8, percent = 50 },
+        stand_swing4 = { x = 0, y = 8, percent = 50 },
+        stand_swing5 = { x = 0, y = 8, percent = 50 },
+        stand_swing6 = { x = 0, y = 8, percent = 50 },
+        stand_swing7 = { x = 0, y = 8, percent = 50 },
+
+        shelter_offset2 = {x = 2, y = 0},
+        shelter_offset6 = {x = 2, y = 0},
+    },
+
+    [31013] = -- 赤焰葫芦
+    {
+        show_char_shadow = false,
+        have_top_layer = true,
+		stand_swing0 = { x = 0, y = 8, percent = 50 },
+        stand_swing1 = { x = 0, y = 8, percent = 50 },
+        stand_swing2 = { x = 0, y = 8, percent = 50 },
+        stand_swing3 = { x = 0, y = 8, percent = 50 },
+        stand_swing4 = { x = 0, y = 8, percent = 50 },
+        stand_swing5 = { x = 0, y = 8, percent = 50 },
+        stand_swing6 = { x = 0, y = 8, percent = 50 },
+        stand_swing7 = { x = 0, y = 8, percent = 50 },
+
+        shelter_offset2 = {x = 2, y = 0},
+        shelter_offset6 = {x = 2, y = 0},
+    },
+
+    [31019] = -- 凌岩豹
+    {
+        show_char_shadow = false,
+        have_top_layer = true,
+        walk_icon = 10002,
+		stand_swing0 = { x = -1, y = -1, percent = 50 },
+        stand_swing1 = { x = -1, y = -1, percent = 50 },
+        stand_swing2 = { x = 0, y = 1, percent = 50 },
+        stand_swing3 = { x = 1, y = 0, percent = 50 },
+        stand_swing4 = { x = 1, y = -1, percent = 50 },
+        stand_swing5 = { x = 0, y = -1, percent = 50 },
+        stand_swing6 = { x = 0, y = -1, percent = 50 },
+        stand_swing7 = { x = 0, y = -1, percent = 50 },
+    },
+
+    [31020] = -- 玉豹
+    {
+        show_char_shadow = false,
+        have_top_layer = true,
+        walk_icon = 10002,
+		stand_swing0 = { x = -1, y = -1, percent = 50 },
+        stand_swing1 = { x = -1, y = -1, percent = 50 },
+        stand_swing2 = { x = 0, y = 1, percent = 50 },
+        stand_swing3 = { x = 1, y = 0, percent = 50 },
+        stand_swing4 = { x = 1, y = -1, percent = 50 },
+        stand_swing5 = { x = 0, y = -1, percent = 50 },
+        stand_swing6 = { x = 0, y = -1, percent = 50 },
+        stand_swing7 = { x = 0, y = -1, percent = 50 },
+    },
+
+    [31021] = -- 北极熊
+    {
+        show_char_shadow = false,
+        have_top_layer = true,
+        walk_icon = 10003,
+		shelter_offset2 = {x = 1, y = 0},
+        shelter_offset6 = {x = 1, y = 0},
+    },
+
+    [31023] = -- 无极熊
+    {
+        show_char_shadow = false,
+        have_top_layer = true,
+        walk_icon = 10003,
+		shelter_offset2 = {x = 1, y = 0},
+        shelter_offset6 = {x = 1, y = 0},
+    },
+
+    [31005] = -- 九尾仙狐
+    {
+        show_char_shadow = false,
+        have_top_layer = true,
+        walk_icon = 10003,
+		shelter_offset2 = {x = 1, y = 0},
+        shelter_offset6 = {x = 1, y = 0},
+    },
+
+    [31022] = -- 九尾妖狐
+    {
+        show_char_shadow = false,
+        have_top_layer = true,
+        walk_icon = 10003,
+		shelter_offset2 = {x = 1, y = 0},
+        shelter_offset6 = {x = 1, y = 0},
+    },
+
+    [31025] = -- 太极熊
+    {
+        show_char_shadow = false,
+        have_top_layer = true,
+        walk_icon = 10003,
+		shelter_offset2 = {x = 1, y = 0},
+        shelter_offset6 = {x = 1, y = 0},
+    },
+
+    [31015] = -- 赤炼神牛
+    {
+        show_char_shadow = false,
+        have_top_layer = true,
+        walk_icon = 10003,
+		shelter_offset2 = {x = 1, y = 0},
+        shelter_offset6 = {x = 1, y = 0},
+    },
+
+    [31018] = -- 至尊太极熊
+    {
+        show_char_shadow = false,
+        have_top_layer = true,
+        walk_icon = 10003,
+		shelter_offset2 = {x = 1, y = 0},
+        shelter_offset6 = {x = 1, y = 0},
+    },
+
+    [31004] = -- 火焰麒麟
+    {
+        show_char_shadow = false,
+        have_top_layer = true,
+        walk_icon = 10003,
+		shelter_offset2 = {x = 1, y = 0},
+        shelter_offset6 = {x = 1, y = 0},
+    },
+
+    [31501] =
+    {
+        show_char_shadow = true,
+        have_top_layer = true,
+		stand_swing0 = { x = 0, y = 8, percent = 50 },
+        stand_swing1 = { x = 0, y = 8, percent = 50 },
+        stand_swing2 = { x = 0, y = 8, percent = 50 },
+        stand_swing3 = { x = 0, y = 8, percent = 50 },
+        stand_swing4 = { x = 0, y = 8, percent = 50 },
+        stand_swing5 = { x = 0, y = 8, percent = 50 },
+        stand_swing6 = { x = 0, y = 8, percent = 50 },
+        stand_swing7 = { x = 0, y = 8, percent = 50 },
+    },
+
+    [31026] = -- 筋斗云
+    {
+        show_char_shadow = false,
+        have_top_layer = true,
+
+        stand_swing0 = { x = 0, y = 8, percent = 50 },
+        stand_swing1 = { x = 0, y = 8, percent = 50 },
+        stand_swing2 = { x = 0, y = 8, percent = 50 },
+        stand_swing3 = { x = 0, y = 8, percent = 50 },
+        stand_swing4 = { x = 0, y = 8, percent = 50 },
+        stand_swing5 = { x = 0, y = 8, percent = 50 },
+        stand_swing6 = { x = 0, y = 8, percent = 50 },
+        stand_swing7 = { x = 0, y = 8, percent = 50 },
+    },
+
+    [31027] = -- 筋斗云
+    {
+        show_char_shadow = false,
+        have_top_layer = true,
+
+        stand_swing0 = { x = 0, y = 8, percent = 50 },
+        stand_swing1 = { x = 0, y = 8, percent = 50 },
+        stand_swing2 = { x = 0, y = 8, percent = 50 },
+        stand_swing3 = { x = 0, y = 8, percent = 50 },
+        stand_swing4 = { x = 0, y = 8, percent = 50 },
+        stand_swing5 = { x = 0, y = 8, percent = 50 },
+        stand_swing6 = { x = 0, y = 8, percent = 50 },
+        stand_swing7 = { x = 0, y = 8, percent = 50 },
+    },
+
+    [31028] = -- 筋斗云
+    {
+        show_char_shadow = false,
+        have_top_layer = true,
+
+        stand_swing0 = { x = 0, y = 8, percent = 50 },
+        stand_swing1 = { x = 0, y = 8, percent = 50 },
+        stand_swing2 = { x = 0, y = 8, percent = 50 },
+        stand_swing3 = { x = 0, y = 8, percent = 50 },
+        stand_swing4 = { x = 0, y = 8, percent = 50 },
+        stand_swing5 = { x = 0, y = 8, percent = 50 },
+        stand_swing6 = { x = 0, y = 8, percent = 50 },
+        stand_swing7 = { x = 0, y = 8, percent = 50 },
+    },
+
+    [31002] = -- 北斗天蓬
+    {
+        show_char_shadow = false,
+        have_top_layer = true,
+        walk_icon = 10004,
+		shelter_offset2 = {x = 1, y = 0},
+        shelter_offset6 = {x = 1, y = 0},
+    },
+
+    [31017] = -- 至尊神龙
+    {
+        show_char_shadow = false,
+        have_top_layer = true,
+        walk_icon = 10004,
+		shelter_offset2 = {x = 1, y = 0},
+        shelter_offset6 = {x = 1, y = 0},
+    },
+
+    [31029] = -- 墨麒麟
+    {
+        show_char_shadow = false,
+        have_top_layer = true,
+        walk_icon = 10004,
+		shelter_offset2 = {x = 1, y = 0},
+        shelter_offset6 = {x = 1, y = 0},
+    },
+}
